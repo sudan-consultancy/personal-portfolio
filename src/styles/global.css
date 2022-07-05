@@ -1,5 +1,6 @@
 :root {
   --primary: #F88E53;
+  --text: #666666;
 }
 
 * {
@@ -7,4 +8,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Gilroy-Medium", sans-serif;
+}
+
+.my-text-primary {
+  color: var(--primary)
 }

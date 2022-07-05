@@ -15,6 +15,7 @@ const Container = styled.div`
   border-radius: 5px;
   min-height: 200px;
   transition: 1s ease;
+  cursor: pointer;
   ${(props) =>
     props.long &&
     css`

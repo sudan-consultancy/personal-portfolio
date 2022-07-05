@@ -16,6 +16,7 @@ import aboutus from "../images/aboutus.svg";
 import portfolio from "../images/portfolio_portrait.png";
 import knowledge from "../images/knowledge.svg";
 import blogs from "../images/blogs.svg";
+import { Layout } from "../templates/navigation/layout";
 
 const Profile = styled.img`
   object-fit: cover;
@@ -42,7 +43,7 @@ const SocialContainer = styled.div`
   @media screen and (min-width: 768px) {
     position: absolute;
     transform: rotateZ(-90deg);
-    right: 0;
+    right: -100px;
   }
 `;
 
@@ -69,75 +70,73 @@ const CardsContainer = styled(Container)`
 
 const HomePage = () => {
   return (
-    <Container fluid="md" className="d-flex flex-column align-items-center">
-      <div className="d-flex flex-column flex-md-row align-items-center">
-        <div className="d-flex flex-column align-items-center align-items-md-start flex-shrink-1">
-          <H6 primary>-&nbsp;Prabjyot Sudan</H6>
-          <H1>Founder &amp; Director</H1>
-          <LandingPara className="w-75">
-            I aim to build tools that enable students to use computers in a
-            masterful way, which can expand how they think, express, understand,
-            and learn everything else.
-          </LandingPara>
-          <Button className="mb-3" primary>
-            Get to know me
-          </Button>
+    <Layout>
+      <Container fluid="md" className="d-flex flex-column align-items-center">
+        <div className="d-flex flex-column flex-md-row align-items-center">
+          <div className="d-flex flex-column align-items-center align-items-md-start flex-shrink-1">
+            <H6 primary>-&nbsp;Prabjyot Sudan</H6>
+            <H1>Founder &amp; Director</H1>
+            <LandingPara className="w-75">
+              I aim to build tools that enable students to use computers in a
+              masterful way, which can expand how they think, express,
+              understand, and learn everything else.
+            </LandingPara>
+            <Button className="mb-3" primary>
+              Get to know me
+            </Button>
+          </div>
+          <div className="d-flex flex-column flex-md-row align-items-center position-relative flex-grow-1 w-auto">
+            <Profile className="m-3" src={profile} alt="profile" />
+            <SocialContainer className="d-flex align-items-center">
+              <span>Follow&nbsp;Me</span>
+              <SocialIcons icon={faTwitter} />
+              <SocialIcons icon={faLinkedinIn} />
+              <SocialIcons icon={faFacebookF} />
+            </SocialContainer>
+          </div>
         </div>
-        <div className="d-flex flex-column flex-md-row align-items-center position-relative flex-grow-1 w-auto">
-          <Profile
-            className="m-3"
-            src={profile}
-            alt="profile"
+        <div className="d-flex flex-column my-5">
+          <span>Some Companies I've Worked With</span>
+          <div className="d-flex flex-wrap justify-content-center"></div>
+        </div>
+        <CardsContainer fluid className="p-md-0">
+          <Card
+            subheading="about"
+            heading="Fine consumer tech"
+            description="Specialization drives success"
+            backgroundImage={aboutus}
           />
-          <SocialContainer className="d-flex align-items-center">
-            <span>Follow&nbsp;Me</span>
-            <SocialIcons icon={faTwitter} />
-            <SocialIcons icon={faLinkedinIn} />
-            <SocialIcons icon={faFacebookF} />
-          </SocialContainer>
-        </div>
-      </div>
-      <div className="d-flex flex-column">
-        <span>Some Companies I’ve Worked With</span>
-        <div className="d-flex flex-wrap justify-content-center"></div>
-      </div>
-      <CardsContainer fluid className="p-md-0">
-        <Card
-          subheading="about"
-          heading="Fine consumer tech"
-          description="Specialization drives success"
-          backgroundImage={aboutus}
-        />
-        <Card
-          subheading="portfolio"
-          heading="Making people happy"
-          description="We’re proud to have been among the first investors
+          <Card
+            subheading="portfolio"
+            heading="Making people happy"
+            description="We’re proud to have been among the first investors
           in 85 category-defining consumer technology
           companies"
-          backgroundImage={portfolio}
-          isStart
-          dark
-          long
-        />
-        <Card
-          subheading="knowledge"
-          heading="Growth in advance"
-          description="We started from the bottom and now we
+            backgroundImage={portfolio}
+            isStart
+            dark
+            long
+          />
+          <Card
+            subheading="knowledge"
+            heading="Growth in advance"
+            description="We started from the bottom and now we
           are defining the world with our knowledge"
-          backgroundImage={knowledge}
-          dark
-          long
-        />
-        <Card
-          subheading="blogs"
-          heading="Sharing is caring"
-          description="Everything you’ve always wanted to know
+            backgroundImage={knowledge}
+            dark
+            long
+          />
+          <Card
+            subheading="blogs"
+            heading="Sharing is caring"
+            description="Everything you’ve always wanted to know
           about consumer technology"
-          backgroundImage={blogs}
-          dark
-        />
-      </CardsContainer>
-    </Container>
+            backgroundImage={blogs}
+            dark
+          />
+        </CardsContainer>
+      </Container>
+    </Layout>
   );
 };
 
