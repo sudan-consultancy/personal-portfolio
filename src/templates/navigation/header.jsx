@@ -110,7 +110,6 @@ export const Header = (props) => {
       <MobileMenu className="position-absolute" open={isOpen}>
         <MyNav
           className="d-flex d-md-none flex-column align-items-end"
-          activeKey={window.location.pathname}
         >
           <NavItem>
             <NavLink href="/">Home</NavLink>
@@ -128,7 +127,6 @@ export const Header = (props) => {
       </MobileMenu>
       <MyNav
         className="align-items-center justify-content-end d-none d-md-flex"
-        activeKey={window.location.pathname}
       >
         <NavItem>
           <NavLink href="/">Home</NavLink>
