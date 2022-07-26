@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const H6Comp = styled.h6`
-  font-family: "Gilroy-Medium", sans-serif;
   ${(props) =>
     props.primary &&
     css`

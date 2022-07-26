@@ -1,15 +1,31 @@
 :root {
-  --primary: #F88E53;
+  --primary: #f88e53;
   --text: #666666;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url(../fonts/Gilroy-Light.otf);
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url(../fonts/Gilroy-ExtraBold.otf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url(../fonts/recoleta-regulardemo.otf);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Gilroy-Medium", sans-serif;
+  font-family: "Gilroy", sans-serif;
 }
 
 .my-text-primary {
-  color: var(--primary)
+  color: var(--primary);
 }
