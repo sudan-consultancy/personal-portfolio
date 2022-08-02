@@ -26,15 +26,6 @@ const FooterContainer = styled.div`
     font-size: 0.8em;
   }
 
-  & a {
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  & a:hover {
-    opacity: 0.5;
-  }
-
   & .my-nav-items > a {
     width: 35%;
 
@@ -54,22 +45,23 @@ export const Footer = (props) => {
       <Container fluid="md">
         <div className="d-flex flex-column flex-md-row mb-4" style={gap1halfem}>
           <Quote className="d-none d-md-block col-12 col-md-8">
-            All our dreams can come true; if we have the courage to pursue them.
+            Stand alone. Carry others.
           </Quote>
           <div
             className="d-flex flex-column col-12 col-md-4 my-subscribe"
             style={gap1halfem}
           >
-            <a className="my-text-primary text-uppercase">
-              SUBSCRIBE TO OUR NEWSLETTER&nbsp;
+            <a className="my-text-primary text-uppercase" href="https://aletheia.substack.com" target="_blank">
+              SUBSCRIBE TO MY NEWSLETTER&nbsp;
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </a>
-            <div className="d-flex flex-wrap my-nav-items">
-              <a href="/about">About</a>
+            <div className="d-flex flex-wrap my-nav-items my-text">
+              <a href="/">Home</a>
+              {/* <a href="/about">About</a> */}
               <a href="/portfolio">Portfolio</a>
-              <a>Blog</a>
-              <a>Contact</a>
-              <a>Team</a>
+              {/* <a>Blog</a> */}
+              {/* <a>Contact</a> */}
+              {/* <a>Team</a> */}
             </div>
           </div>
         </div>
@@ -86,11 +78,8 @@ export const Footer = (props) => {
               <a>
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </a>
-              <a>
-                <FontAwesomeIcon icon={faFacebookF} />
-              </a>
             </div>
-            <a>prabjyot@eniak.co</a>
+            <a href="mailto:sudanprabjyot@gmail.com">sudanprabjyot@gmail.com</a>
           </div>
         </div>
       </Container>

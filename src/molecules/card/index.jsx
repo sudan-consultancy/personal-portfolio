@@ -33,11 +33,12 @@ const Container = styled.div`
     `}
 
   @media screen and (min-width: 768px) {
-    background-position: bottom right;
+    background-position: bottom right ${props => props.text_space && '30%'};
   }
 
   :hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
+    box-shadow: 0px 0px 10px 5px #ddd;
   }
 `;
 
@@ -62,7 +63,10 @@ const Card = (props) => {
     >
       <SubheadingH6 className="text-uppercase">{props.subheading}</SubheadingH6>
       <H5 className="text-capitalize">{props.heading}</H5>
-      <DescriptionSpan className="w-75" {...props}>
+      <DescriptionSpan
+        className={`${props.thinner ? "w-50" : "w-75"}`}
+        {...props}
+      >
         {props.description}
       </DescriptionSpan>
     </Container>

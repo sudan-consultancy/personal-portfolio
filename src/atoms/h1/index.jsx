@@ -7,7 +7,7 @@ const StyledH1 = styled.h1`
 `;
 
 const H1 = (props) => {
-  return <StyledH1>{props.children}</StyledH1>;
+  return <StyledH1 {...props}>{props.children}</StyledH1>;
 };
 
 export default H1;

@@ -6,11 +6,18 @@
 @font-face {
   font-family: "Gilroy";
   src: url(../fonts/Gilroy-Light.otf);
+  font-weight: 100;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url(../fonts/Gilroy-ExtraBold.otf);
+  src: url(../fonts/Gilroy-Regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url(../fonts/Gilroy-Semibold.otf);
   font-weight: 800;
 }
 
@@ -26,6 +33,21 @@
   font-family: "Gilroy", sans-serif;
 }
 
+* a {
+  text-decoration: none !important;
+  color: initial !important;
+  cursor: pointer !important;
+}
+
+* a:hover {
+  color: initial !important;
+  opacity: 0.5;
+}
+
 .my-text-primary {
   color: var(--primary);
+}
+
+.my-text {
+  color: var(--text);
 }

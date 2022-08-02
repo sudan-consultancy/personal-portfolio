@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -42,6 +42,8 @@ const MobileMenu = styled.div`
   right: 0;
   width: 100%;
   transition: 0.5s ease-in-out;
+  z-index: 100;
+  border-bottom: 1px solid black;
 
   ${(props) =>
     props.open &&
@@ -67,7 +69,7 @@ const MyNav = styled(Nav)`
 
       &.active {
         border-bottom: 1px solid var(--primary);
-        color: var(--primary);
+        color: var(--primary) !important;
         padding-bottom: 10px;
       }
     }
@@ -76,13 +78,21 @@ const MyNav = styled(Nav)`
 
 export const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [location, setLocation] = useState("/");
+
+  useEffect(() => {
+    setLocation(window.location.pathname);
+  }, []);
 
   const openMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <Container className="d-flex flex-row justify-content-between align-items-center pt-3 position-relative">
+    <Container
+      fluid
+      className="d-flex flex-row justify-content-between align-items-center pt-3 position-relative"
+    >
       <div className="d-flex flex-row align-items-center" style={gap1em}>
         <div>
           <h5 className="m-0">Prabjyot Sudan</h5>
@@ -100,34 +110,47 @@ export const Header = (props) => {
         <span>Menu</span>
       </div>
       <MobileMenu className="position-absolute" open={isOpen}>
-        <MyNav className="d-flex d-md-none flex-column align-items-end">
+        <MyNav
+          className="d-flex d-md-none flex-column align-items-end"
+          activeKey={location}
+          onSelect={(selectedKey) => {
+            setLocation(selectedKey);
+          }}
+        >
           <NavItem>
             <NavLink href="/">Home</NavLink>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <NavLink href="/about">About</NavLink>
-          </NavItem>
+          </NavItem> */}
           <NavItem>
             <NavLink href="/portfolio">Portfolio</NavLink>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <NavLink>Blog</NavLink>
-          </NavItem>
+          </NavItem> */}
         </MyNav>
       </MobileMenu>
-      <MyNav className="align-items-center justify-content-end d-none d-md-flex">
+      <MyNav
+        className="align-items-center justify-content-end d-none d-md-flex"
+        activeKey={location}
+        onSelect={(selectedKey) => {
+          console.log('selected key', selectedKey)
+          setLocation(selectedKey);
+        }}
+      >
         <NavItem>
           <NavLink href="/">Home</NavLink>
         </NavItem>
-        <NavItem>
+        {/* <NavItem>
           <NavLink href="/about">About</NavLink>
-        </NavItem>
+        </NavItem> */}
         <NavItem>
           <NavLink href="/portfolio">Portfolio</NavLink>
         </NavItem>
-        <NavItem>
+        {/* <NavItem>
           <NavLink>Blog</NavLink>
-        </NavItem>
+        </NavItem> */}
       </MyNav>
     </Container>
   );
