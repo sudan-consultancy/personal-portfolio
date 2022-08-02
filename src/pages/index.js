@@ -42,11 +42,60 @@ const Profile = styled.img`
 `;
 
 const LandingPara = styled.p`
-  text-align: center;
+  text-align: justify;
   color: #666666;
+  width: 100%;
+
+  & > ul {
+    padding-left: 0px;
+    
+    & > li {
+    list-style-type: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    & > u {
+      text-decoration-style: dotted;
+      cursor: help;
+      position: relative;
+
+      &::before {
+        content: attr(data-hover);
+        position: absolute;
+        width: 200px;
+        border: 1px solid black;
+        background-color: white;
+        padding: 1rem;
+        top: 0;
+        left: 50%;
+        transform: translateX(50%);
+        transition: 0.5s ease;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 5;
+      }
+
+      &:hover::before {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      list-style-type: disc;
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-left: inherit;
+  }
+}
 
   @media screen and (min-width: 768px) {
     text-align: left;
+    width: 75%;
   }
 `;
 
@@ -83,11 +132,11 @@ const HomePage = () => {
   return (
     <Layout>
       <Container fluid="md" className="d-flex flex-column align-items-center">
-        <SplashContainer className="d-flex flex-column flex-md-row align-items-center position-relative">
-          <div className="d-flex flex-column align-items-center align-items-md-start flex-shrink-1 mt-5">
-            <H6 primary>-&nbsp;Who Am I</H6>
-            <H1>What I'm Upto</H1>
-            <LandingPara className="w-75">
+        <SplashContainer className="d-flex flex-column flex-lg-row align-items-center position-relative">
+          <div className="d-flex flex-column align-items-center align-items-lg-start flex-shrink-1 mt-5 flex-1">
+            {/* <H6 primary>-&nbsp;What I'm Working On</H6> */}
+            <H1>What I'm Working On</H1>
+            <LandingPara>
               <ul>
                 <li>
                   Building tools to enable students to use computers in a
@@ -95,10 +144,10 @@ const HomePage = () => {
                   understand, and learn everything else at Eniak.
                 </li>
                 <li>
-                  Building a platform to connect the dark-talent with
-                  opportunities in startups. (Dark Talent are all those people
+                  Building a platform to connect the <u data-hover="Dark Talent are all those people
                   from the middle of nowhere, passed over by the establishment,
-                  who could do great things if only given the opportunity)
+                  who could do great things if only given the opportunity">dark-talent</u> with
+                  opportunities in startups.
                 </li>
                 <li>
                   Enabling Cogoport to onboard 200 students from Premier
@@ -127,12 +176,12 @@ const HomePage = () => {
                 </li>
               </ul>
             </LandingPara>
-            <Button className="mb-3" primary>
-              Get in touch
+            <Button as="a" href="/portfolio" className="mb-3 text-white" primary>
+              Get to know me
             </Button>
           </div>
-          <ProfileContainer className="d-flex flex-column flex-md-row align-items-center flex-grow-1 w-auto align-self-md-start mt-md-5 align-self-lg-center mt-lg-0 sticky-top">
-            <Profile className="m-3" src={profile} alt="profile" />
+          <ProfileContainer className="d-flex flex-column flex-1 flex-md-row align-items-center flex-grow-1 w-auto mt-md-5 align-self-lg-center mt-lg-0 sticky-top">
+            <Profile className="m-3 d-none d-md-block" src={profile} alt="profile" />
             <SocialContainer className="d-flex align-items-center">
               <span>Follow&nbsp;Me</span>
               <SocialIcons icon={faTwitter} />
@@ -167,6 +216,8 @@ const HomePage = () => {
             backgroundImage={knowledge}
             dark
             long
+            thinner
+            text_space
           />
           <Card
             subheading="Resources"

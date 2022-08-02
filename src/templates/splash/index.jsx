@@ -35,7 +35,7 @@ export const SplashComponent = (props) => {
       {...props}
     >
       <Container fluid="md">
-        <H6 primary>-&nbsp;{props.heading}</H6>
+        {props.heading && <H6 primary>-&nbsp;{props.heading}</H6>}
         <H1>{props.title}</H1>
         <DescriptionPara {...props}>{props.description}</DescriptionPara>
       </Container>
