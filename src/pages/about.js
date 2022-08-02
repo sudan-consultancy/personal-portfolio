@@ -2,33 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Layout } from "../templates/navigation/layout";
 import Container from "react-bootstrap/Container";
-import H6 from "../atoms/h6";
-import H1 from "../atoms/h1";
-import AboutUsSplash from "../images/aboutUsBanner.svg";
 import Portfolio from "../images/portfolio_portrait.png";
 import Knowledge from "../images/knowledge_portrait.jpeg";
 import RightArrow from "../images/footer_right_arrow.svg";
-
-const Splash = styled.div`
-  min-height: 60vh;
-  background-image: url(${AboutUsSplash});
-  background-position: right bottom;
-  background-size: cover;
-`;
-
-const DescriptionPara = styled.p`
-  color: #666666;
-  width: 100%;
-  font-size: 18px;
-
-  @media screen and (min-width: 768px) {
-    width: 75%;
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 50%;
-  }
-`;
+import AboutUsSplash from "../images/aboutUsBanner.svg";
+import { SplashComponent } from "../templates/splash";
 
 const YellowDiv = styled.div`
   background-color: #f8f7ec;
@@ -62,26 +40,19 @@ const FooterNavigationDiv = styled.div`
       width: 50%;
     }
   }
-`
+`;
 
 const AboutUs = (props) => {
   return (
     <Layout>
-      <Splash className="d-flex flex-column justify-content-start justify-content-md-center pt-5">
-        <Container fluid="md">
-          <H6 primary>-&nbsp;About</H6>
-          <H1>
-            India's Consumer
-            <br />
-            Technology
-          </H1>
-          <DescriptionPara>
-            Deep specialization. Broad insights. Superior returns. We help
-            founders turn insights and prototypes into the next generation of
-            iconic consumer technology companies.
-          </DescriptionPara>
-        </Container>
-      </Splash>
+      <SplashComponent
+        heading="About"
+        title={["India's Consumer", <br />, "Technology"]}
+        description="Deep specialization. Broad insights. Superior returns. We help
+          founders turn insights and prototypes into the next generation of
+          iconic consumer technology companies."
+        backgroundImage={AboutUsSplash}
+      />
       <Container
         fluid="md"
         className="d-flex flex-column py-5"

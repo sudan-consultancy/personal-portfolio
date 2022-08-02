@@ -84,16 +84,8 @@ export const Header = (props) => {
   return (
     <Container className="d-flex flex-row justify-content-between align-items-center pt-3 position-relative">
       <div className="d-flex flex-row align-items-center" style={gap1em}>
-        <img
-          className="rounded-circle"
-          width="50px"
-          height="50px"
-          src={profile}
-          alt="profile"
-        />
         <div>
           <h5 className="m-0">Prabjyot Sudan</h5>
-          <span>Founder</span>
         </div>
       </div>
       <div
@@ -108,9 +100,7 @@ export const Header = (props) => {
         <span>Menu</span>
       </div>
       <MobileMenu className="position-absolute" open={isOpen}>
-        <MyNav
-          className="d-flex d-md-none flex-column align-items-end"
-        >
+        <MyNav className="d-flex d-md-none flex-column align-items-end">
           <NavItem>
             <NavLink href="/">Home</NavLink>
           </NavItem>
@@ -118,16 +108,14 @@ export const Header = (props) => {
             <NavLink href="/about">About</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>Portfolio</NavLink>
+            <NavLink href="/portfolio">Portfolio</NavLink>
           </NavItem>
           <NavItem>
             <NavLink>Blog</NavLink>
           </NavItem>
         </MyNav>
       </MobileMenu>
-      <MyNav
-        className="align-items-center justify-content-end d-none d-md-flex"
-      >
+      <MyNav className="align-items-center justify-content-end d-none d-md-flex">
         <NavItem>
           <NavLink href="/">Home</NavLink>
         </NavItem>
@@ -135,7 +123,7 @@ export const Header = (props) => {
           <NavLink href="/about">About</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink>Portfolio</NavLink>
+          <NavLink href="/portfolio">Portfolio</NavLink>
         </NavItem>
         <NavItem>
           <NavLink>Blog</NavLink>

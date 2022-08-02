@@ -14,6 +14,7 @@ const gap1halfem = {
 };
 
 const Quote = styled.q`
+  font-family: 'Recoleta';
   font-size: 1.4em;
 `
 
@@ -49,7 +50,7 @@ const FooterContainer = styled.div`
 
 export const Footer = (props) => {
   return (
-    <FooterContainer className="mt-md-3 py-4 py-md-5">
+    <FooterContainer className="py-4 py-md-5">
       <Container fluid="md">
         <div className="d-flex flex-column flex-md-row mb-4" style={gap1halfem}>
           <Quote className="d-none d-md-block col-12 col-md-8">
@@ -64,8 +65,8 @@ export const Footer = (props) => {
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </a>
             <div className="d-flex flex-wrap my-nav-items">
-              <a>About</a>
-              <a>Portfolio</a>
+              <a href="/about">About</a>
+              <a href="/portfolio">Portfolio</a>
               <a>Blog</a>
               <a>Contact</a>
               <a>Team</a>
