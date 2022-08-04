@@ -120,10 +120,10 @@ export const Header = (props) => {
             <NavLink href="/">Home</NavLink>
           </NavItem>
           {/* <NavItem>
-            <NavLink href="/about">About</NavLink>
+            <NavLink href="/about/">About</NavLink>
           </NavItem> */}
           <NavItem>
-            <NavLink href="/portfolio">Portfolio</NavLink>
+            <NavLink href="/portfolio/">Portfolio</NavLink>
           </NavItem>
           {/* <NavItem>
             <NavLink>Blog</NavLink>
