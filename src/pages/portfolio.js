@@ -6,6 +6,11 @@ import Container from "react-bootstrap/Container";
 import styled from "styled-components";
 import H1 from "../atoms/h1";
 
+const DescriptionPara = styled.p`
+  color: #666666;
+  font-size: 18px;
+`;
+
 const WorkList = styled.ul`
   & > li {
     padding-top: 0.3rem;
@@ -29,7 +34,6 @@ const Portfolio = () => {
   return (
     <Layout>
       <SplashComponent
-        description="Working on technologies that can expand what people can think and do"
         backgroundImage={PortfolioSplash}
         long
         text_center
@@ -39,6 +43,9 @@ const Portfolio = () => {
       <Container>
         <WorkList className="pb-5 mx-auto">
           <H1 className="mt-5">Past Work</H1>
+          <DescriptionPara>
+            Working on technologies that can expand what people can think and do
+          </DescriptionPara>
           <li>Started coding at the age of 13.</li>
           <li>
             Started freelancing at the age of 15 where I designed static
