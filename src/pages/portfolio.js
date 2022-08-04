@@ -10,6 +10,14 @@ const WorkList = styled.ul`
     padding-top: 0.3rem;
     padding-bottom: 0.4rem;
   }
+
+  @media screen and (min-width: 768px) {
+    width: 75%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 50%;
+  }
 `
 
 const Portfolio = () => {
@@ -25,7 +33,7 @@ const Portfolio = () => {
         background_center
       />
       <Container>
-        <WorkList className="py-5 w-50 mx-auto">
+        <WorkList className="py-5 mx-auto">
           <li>Started coding at the age of 13.</li>
           <li>
             Started freelancing at the age of 15 where I designed static
