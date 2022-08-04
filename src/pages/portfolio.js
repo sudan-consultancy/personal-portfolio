@@ -4,11 +4,16 @@ import { SplashComponent } from "../templates/splash";
 import PortfolioSplash from "../images/portfolio.png";
 import Container from "react-bootstrap/Container";
 import styled from "styled-components";
+import H1 from "../atoms/h1";
 
 const WorkList = styled.ul`
   & > li {
     padding-top: 0.3rem;
     padding-bottom: 0.4rem;
+
+    & > a {
+      text-decoration: underline !important;
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -18,13 +23,12 @@ const WorkList = styled.ul`
   @media screen and (min-width: 1024px) {
     width: 50%;
   }
-`
+`;
 
 const Portfolio = () => {
   return (
     <Layout>
       <SplashComponent
-        title="Past Work"
         description="Working on technologies that can expand what people can think and do"
         backgroundImage={PortfolioSplash}
         long
@@ -33,7 +37,8 @@ const Portfolio = () => {
         background_center
       />
       <Container>
-        <WorkList className="py-5 mx-auto">
+        <WorkList className="pb-5 mx-auto">
+          <H1 className="mt-5">Past Work</H1>
           <li>Started coding at the age of 13.</li>
           <li>
             Started freelancing at the age of 15 where I designed static
@@ -41,7 +46,8 @@ const Portfolio = () => {
           </li>
           <li>
             Single-handedly designed, developed and deployed inventory, staff
-            and document management system for KLM Royal Dutch Airlines India at
+            and document management system for{" "}
+            <a href="https://www.klm.com">KLM Royal Dutch Airlines India</a> at
             the age of 17.
           </li>
           <li>
@@ -51,9 +57,13 @@ const Portfolio = () => {
             raising a pre-seed round at the age of 20.
           </li>
           <li>
-            Built an AI based app called Capshun which generates Instagram
-            captions and hashtag recommendations for the photos you click or
-            select. This app now has over 100k downloads.
+            Built an AI based app called{" "}
+            <a href="https://play.google.com/store/apps/details?id=com.capshun.co">
+              Capshun
+            </a>{" "}
+            which generates Instagram captions and hashtag recommendations for
+            the photos you click or select. This app now has over 100k
+            downloads.
           </li>
           <li>
             Helped shape the concept called “templating engine” which is a
@@ -63,31 +73,39 @@ const Portfolio = () => {
             android games in just 90mins as an introduction to coding.
           </li>
           <li>
-            Managed a team of 5 to develop the initial MVP of Bhyve which has
-            now raised over 100k in seed funding.
+            Managed a team of 5 to develop the initial MVP of{" "}
+            <a href="https://www.bhyve.io">Bhyve</a> which has now raised over
+            100k in seed funding.
           </li>
           <li>
             Designed and delivered a 6 month course called full stack web
-            development for IIDE (Indian institute of digital education). Also
-            researched and developed a gamified learning system around it.
+            development for{" "}
+            <a href="https://iide.co/">
+              IIDE (Indian institute of digital education)
+            </a>
+            . Also researched and developed a gamified learning system around
+            it.
           </li>
           <li>
             Researching and developing a once-useable file system architecture
             to solve the problem of piracy in 3d printing marketplaces by owning
-            the whole ecosystem under the umbrella called Shaping3D.
+            the whole ecosystem under the umbrella called{" "}
+            <a href="https://shaping3d.com">Shaping3D</a>.
           </li>
           <li>
-            CTO at Vefes. Building a platform to democratize renewable assets
-            through a patented technology that maximizes returns.
+            CTO at <a href="https://vefes.in/">Vefes</a>. Building a platform to
+            democratize renewable assets through a patented technology that
+            maximizes returns.
           </li>
           <li>
             Bootstrapped a community of dark talent which has helped 15
             different companies to build tech products.
           </li>
           <li>
-            Building and delivering a synchronous course for Cogoport on
-            building tech products to 200 students from the most prestigious
-            institutes of India (IIT, NIT, and IIIT).
+            Building and delivering a synchronous course for{" "}
+            <a href="https://www.cogoport.com/">Cogoport</a> on building tech
+            products to 200 students from the most prestigious institutes of
+            India (IIT, NIT, and IIIT).
           </li>
         </WorkList>
       </Container>
