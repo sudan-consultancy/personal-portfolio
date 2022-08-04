@@ -7,8 +7,8 @@ import styled from "styled-components";
 
 const WorkList = styled.ul`
   & > li {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.4rem;
   }
 `
 
@@ -16,7 +16,7 @@ const Portfolio = () => {
   return (
     <Layout>
       <SplashComponent
-        title="Play"
+        title="Past Work"
         description="Working on technologies that can expand what people can think and do"
         backgroundImage={PortfolioSplash}
         long
@@ -25,7 +25,7 @@ const Portfolio = () => {
         background_center
       />
       <Container>
-        <WorkList className="py-5">
+        <WorkList className="py-5 w-50 mx-auto">
           <li>Started coding at the age of 13.</li>
           <li>
             Started freelancing at the age of 15 where I designed static

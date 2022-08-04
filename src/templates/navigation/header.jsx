@@ -90,7 +90,6 @@ export const Header = (props) => {
 
   return (
     <Container
-      fluid
       className="d-flex flex-row justify-content-between align-items-center pt-3 position-relative"
     >
       <div className="d-flex flex-row align-items-center" style={gap1em}>

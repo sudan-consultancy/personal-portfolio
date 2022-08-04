@@ -3,12 +3,8 @@ import styled from "styled-components";
 import Button from "../atoms/button";
 import H1 from "../atoms/h1";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTwitter,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Container from "react-bootstrap/Container";
-import H6 from "../atoms/h6";
 import Card from "../molecules/card";
 import profile from "../images/profile_01.jpg";
 import aboutus from "../images/aboutus.svg";
@@ -48,50 +44,54 @@ const LandingPara = styled.p`
 
   & > ul {
     padding-left: 0px;
-    
+
     & > li {
-    list-style-type: none;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+      list-style-type: none;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
 
-    & > u {
-      text-decoration-style: dotted;
-      cursor: help;
-      position: relative;
-
-      &::before {
-        content: attr(data-hover);
-        position: absolute;
-        width: 200px;
-        border: 1px solid black;
-        background-color: white;
-        padding: 1rem;
-        top: 0;
-        left: 50%;
-        transform: translateX(50%);
-        transition: 0.5s ease;
-        visibility: hidden;
-        opacity: 0;
-        z-index: 5;
+      & > a {
+        text-decoration: underline !important;
       }
 
-      &:hover::before {
-        visibility: visible;
-        opacity: 1;
+      & > u {
+        text-decoration-style: dotted;
+        cursor: help;
+        position: relative;
+
+        &::before {
+          content: attr(data-hover);
+          position: absolute;
+          width: 200px;
+          border: 1px solid black;
+          background-color: white;
+          padding: 1rem;
+          top: 0;
+          left: 50%;
+          transform: translateX(50%);
+          transition: 0.5s ease;
+          visibility: hidden;
+          opacity: 0;
+          z-index: 5;
+        }
+
+        &:hover::before {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        list-style-type: disc;
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
       }
     }
 
     @media screen and (min-width: 768px) {
-      list-style-type: disc;
-      padding-top: 0.6rem;
-      padding-bottom: 0.6rem;
+      padding-left: inherit;
     }
   }
-
-  @media screen and (min-width: 768px) {
-    padding-left: inherit;
-  }
-}
 
   @media screen and (min-width: 768px) {
     text-align: left;
@@ -144,48 +144,70 @@ const HomePage = () => {
                   understand, and learn everything else at Eniak.
                 </li>
                 <li>
-                  Building a platform to connect the <u data-hover="Dark Talent are all those people
+                  Building a platform to connect the{" "}
+                  <u
+                    data-hover="Dark Talent are all those people
                   from the middle of nowhere, passed over by the establishment,
-                  who could do great things if only given the opportunity">dark-talent</u> with
-                  opportunities in startups.
+                  who could do great things if only given the opportunity"
+                  >
+                    dark-talent
+                  </u>{" "}
+                  with opportunities in startups.
                 </li>
                 <li>
-                  Enabling Cogoport to onboard 200 students from Premier
-                  Institutes of India (IIT, NIT, &amp; IIIT) to learn full stack
-                  web development.
+                  Enabling <a href="https://www.cogoport.com/">Cogoport</a> to
+                  onboard 200 students from Premier Institutes of India (IIT,
+                  NIT, &amp; IIIT) to learn full stack web development.
                 </li>
                 <li>
-                  Helping Vefes democratize ownership of renewable assets with
-                  the eventual goal of access to renewables being one-click
-                  away.
+                  Helping <a href="https://vefes.in/">Vefes</a> democratize
+                  ownership of renewable assets with the eventual goal of access
+                  to renewables being one-click away.
                 </li>
                 <li>
                   Building One Percent Startups - (More about this coming soon).
                 </li>
                 <li>
                   Perhaps, the greatest art is a life well lived. I started a
-                  newsletter called Aletheia where I share things beautiful,
-                  wise and timeless.
+                  newsletter called{" "}
+                  <a href="https://aletheia.substack.com/">Aletheia</a> where I
+                  share things beautiful, wise and timeless.
                 </li>
                 <li>
                   Previously, I have built technology for over 30 different
-                  companies across 10 different industries including KLM Royal
-                  Dutch Airlines, Capshun (AI app which got over 100K
-                  downloads), IIDE (Indian institute of digital education),
-                  &amp; Manyavar.
+                  companies across 10 different industries including{" "}
+                  <a href="https://www.klm.com">KLM Royal Dutch Airlines</a>,{" "}
+                  <a href="https://play.google.com/store/apps/details?id=com.capshun.co">
+                    Capshun (AI app which got over 100K downloads)
+                  </a>
+                  ,{" "}
+                  <a href="https://iide.co/">
+                    IIDE (Indian institute of digital education)
+                  </a>
+                  , &amp; <a href="https://www.manyavar.com/">Manyavar</a>.
                 </li>
               </ul>
             </LandingPara>
-            <Button as="a" href="/portfolio" className="mb-3 text-white" primary>
+            <Button
+              as="a"
+              href="/portfolio"
+              className="mb-3 text-white"
+              primary
+            >
               Get to know me
             </Button>
           </div>
           <ProfileContainer className="d-flex flex-column flex-1 flex-md-row align-items-center flex-grow-1 w-auto mt-md-5 align-self-lg-center mt-lg-0 sticky-top">
-            <Profile className="m-3 d-none d-md-block" src={profile} alt="profile" />
+            <Profile
+              className="m-3 d-none d-md-block"
+              src={profile}
+              alt="profile"
+            />
             <SocialContainer className="d-flex align-items-center">
               <span>Follow&nbsp;Me</span>
-              <SocialIcons icon={faTwitter} />
-              <SocialIcons icon={faLinkedinIn} />
+              <a href="https://twitter.com/Prabjyotsudan" target="_blank">
+                <SocialIcons icon={faTwitter} />
+              </a>
             </SocialContainer>
           </ProfileContainer>
         </SplashContainer>

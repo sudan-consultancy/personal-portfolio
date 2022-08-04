@@ -31,7 +31,7 @@ export const SplashComponent = (props) => {
     <Splash
       className={`d-flex flex-column justify-content-start ${
         !props.long && "justify-content-md-center"
-      } ${props.text_center && "mt-5"} pt-5`}
+      } ${props.text_center && "mt-2"} pt-5`}
       {...props}
     >
       <Container fluid="md">
