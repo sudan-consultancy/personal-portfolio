@@ -5,11 +5,15 @@ import Nav from "react-bootstrap/Nav";
 import NavItem from "react-bootstrap/NavItem";
 import NavLink from "react-bootstrap/NavLink";
 
-import profile from "../../images/profile_01.jpg";
+import brand from "../../images/brand_logo.png";
 
 const gap1em = {
   gap: "1em",
 };
+
+const BrandImage = styled.img`
+  max-width: 35px;
+`;
 
 const StrokeSpan = styled.div`
   width: 30px;
@@ -89,13 +93,9 @@ export const Header = (props) => {
   };
 
   return (
-    <Container
-      className="d-flex flex-row justify-content-between align-items-center pt-3 position-relative"
-    >
+    <Container className="d-flex flex-row justify-content-between align-items-center pt-3 position-relative">
       <div className="d-flex flex-row align-items-center" style={gap1em}>
-        <div>
-          <h5 className="m-0">Prabjyot Sudan</h5>
-        </div>
+        <BrandImage src={brand} alt="Brand logo" />
       </div>
       <div
         className="d-flex align-items-center d-md-none"
@@ -134,7 +134,7 @@ export const Header = (props) => {
         className="align-items-center justify-content-end d-none d-md-flex"
         activeKey={location}
         onSelect={(selectedKey) => {
-          console.log('selected key', selectedKey)
+          console.log("selected key", selectedKey);
           setLocation(selectedKey);
         }}
       >
